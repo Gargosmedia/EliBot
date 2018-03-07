@@ -46,29 +46,29 @@ namespace Microsoft.Bot.Sample.LuisBot
             await this.ShowLuisResult(context, result);
         }
         [LuisIntent("Reminder.Create")]
-        public async Task HelpIntent(IDialogContext context, LuisResult result)
+        public async Task CreateIntent(IDialogContext context, LuisResult result)
         {
             await this.ShowLuisResult(context, result);
         }
         [LuisIntent("Reminder.Change")]
-        public async Task HelpIntent(IDialogContext context, LuisResult result)
+        public async Task ChangeIntent(IDialogContext context, LuisResult result)
         {
             await this.ShowLuisResult(context, result);
         }
         [LuisIntent("Reminder.Find")]
-        public async Task HelpIntent(IDialogContext context, LuisResult result)
+        public async Task FindIntent(IDialogContext context, LuisResult result)
         {
             await this.ShowLuisResult(context, result);
         }
         [LuisIntent("Reminder.Delete")]
-        public async Task HelpIntent(IDialogContext context, LuisResult result)
+        public async Task DeleteIntent(IDialogContext context, LuisResult result)
         {
             await this.ShowLuisResult(context, result);
         }
 
         private async Task ShowLuisResult(IDialogContext context, LuisResult result) 
         {
-            await context.PostAsync($"You have reached {result.Intents[0].Intent}. You said: {result.Query}");
+            await context.PostAsync($"Intended action: {result.Intents[0].Intent}. You said: {result.Query}");
             context.Wait(MessageReceived);
         }
     }
