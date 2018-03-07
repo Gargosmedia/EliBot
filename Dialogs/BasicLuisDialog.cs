@@ -1,7 +1,8 @@
 using System;
 using System.Configuration;
 using System.Threading.Tasks;
-
+using System.Collections.Generic;
+using System.Text;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Builder.Luis;
 using Microsoft.Bot.Builder.Luis.Models;
@@ -40,6 +41,26 @@ namespace Microsoft.Bot.Sample.LuisBot
         }
 
         [LuisIntent("Help")]
+        public async Task HelpIntent(IDialogContext context, LuisResult result)
+        {
+            await this.ShowLuisResult(context, result);
+        }
+        [LuisIntent("Reminder.Create")]
+        public async Task HelpIntent(IDialogContext context, LuisResult result)
+        {
+            await this.ShowLuisResult(context, result);
+        }
+        [LuisIntent("Reminder.Change")]
+        public async Task HelpIntent(IDialogContext context, LuisResult result)
+        {
+            await this.ShowLuisResult(context, result);
+        }
+        [LuisIntent("Reminder.Find")]
+        public async Task HelpIntent(IDialogContext context, LuisResult result)
+        {
+            await this.ShowLuisResult(context, result);
+        }
+        [LuisIntent("Reminder.Delete")]
         public async Task HelpIntent(IDialogContext context, LuisResult result)
         {
             await this.ShowLuisResult(context, result);
